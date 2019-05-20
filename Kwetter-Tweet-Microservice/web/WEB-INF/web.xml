@@ -9,6 +9,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>javax.ws.rs.core.Application</servlet-name>
-        <url-pattern>/user/*</url-pattern>
+        <url-pattern>/tweet/*</url-pattern>
     </servlet-mapping>
 </web-app>

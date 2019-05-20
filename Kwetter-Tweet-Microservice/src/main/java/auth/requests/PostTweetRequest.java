@@ -1,0 +1,23 @@
+package auth.requests;
+
+import java.io.Serializable;
+
+public class PostTweetRequest implements Serializable {
+
+    private String id;
+    private String message;
+    private String username;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+}
