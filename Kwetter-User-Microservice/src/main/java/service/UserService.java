@@ -1,6 +1,6 @@
 package service;
 
-import dao.jpa.UserDAOJPA;
+import dao.UserDAOJPA;
 import exceptions.MessageTooLongException;
 import exceptions.UserNotFoundException;
 import exceptions.UsernameTakenException;

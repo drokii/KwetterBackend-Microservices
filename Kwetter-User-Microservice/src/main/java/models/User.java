@@ -38,7 +38,8 @@ public class User {
     )
     private List<User> following = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "author")
+    @Column
+    @ElementCollection(targetClass=Integer.class)
     private List<Integer> tweets= new ArrayList<>();
 
     public User() {

@@ -10,9 +10,8 @@ import exceptions.MessageTooLongException;
 import exceptions.UserNotFoundException;
 import exceptions.UsernameTakenException;
 import models.User;
-import services.UserService;
+import service.UserService;
 
-import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -22,7 +21,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 
-@Produces({"application/json"})
+@Produces("application/json")
 @Path("user")
 public class UserServiceRest {
 
@@ -34,7 +33,7 @@ public class UserServiceRest {
     @Path("/{id}")
     public Response getUser(@PathParam("id") String id) throws UserNotFoundException {
         User user = userService.getUserById(Integer.parseInt(id));
-        List<User> userList = new ArrayList<User>();
+        List<User> userList = new ArrayList<>();
         userList.add(user);
 
 
@@ -67,7 +66,7 @@ public class UserServiceRest {
         } catch (UserNotFoundException e) {
             return Response.status(200).entity("This user doesn't exist.").build();
         } catch (MessageTooLongException e) {
-            return Response.status(200).entity("Bio is too long.").build();
+            return Response.status(200).entity("Message too long.").build();
         }
 
     }
