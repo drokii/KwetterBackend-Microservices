@@ -1,5 +1,6 @@
 package service;
 
+import dao.DataSeeder;
 import dao.UserDAOJPA;
 import exceptions.MessageTooLongException;
 import exceptions.UserNotFoundException;
@@ -7,6 +8,7 @@ import exceptions.UsernameTakenException;
 import models.Role;
 import models.User;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.util.List;
@@ -15,6 +17,9 @@ import java.util.List;
 public class UserService {
     @Inject
     UserDAOJPA userDAO;
+
+    @Inject
+    DataSeeder dataSeeder;
 
 
     public void editName(String username, String desired) throws UserNotFoundException, UsernameTakenException {
@@ -125,4 +130,5 @@ public class UserService {
     public User getUserById(int valueOf) throws UserNotFoundException {
         return userDAO.find(valueOf);
     }
+
 }

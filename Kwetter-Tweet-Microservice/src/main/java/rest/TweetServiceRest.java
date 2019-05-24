@@ -20,14 +20,11 @@ import java.util.List;
 
 @Produces({"application/json"})
 @Consumes({"application/json"})
-@Secured
 @Path("tweet")
 public class TweetServiceRest {
 
     @Inject
     TweetService tweetService;
-
-
 
     @GET
     @Path("/get/{id}")
